@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sneaker Rating Predictor</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #d9a7c7, #fffcdc);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            width: 400px;
+            text-align: center;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sneaker Rating Predictor</h2>
+        <form method="post" action="/predict">
+            <label>Select Sneaker Title:</label>
+            <select name="title" required>
+                {% for t in titles %}
+                    <option value="{{ t }}">{{ t }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="number" step="any" name="price" placeholder="Price (INR)" required>
+            <input type="number" step="any" name="discount" placeholder="Discount (%)" required>
+            <input type="number" step="any" name="count" placeholder="Count of Ratings" required>
+
+            <input type="submit" value="Predict Rating">
+        </form>
+
+        <div class="result">{{ prediction_text }}</div>
+    </div>
+</body>
+</html>
