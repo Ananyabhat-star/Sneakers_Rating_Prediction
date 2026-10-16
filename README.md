@@ -1,19 +1,21 @@
-# Sneakers Rating Prediction
+# 👟 Sneakers Rating Prediction
 
-This is a Machine Learning based web application that predicts whether a sneaker will receive a high rating or not.
+A machine learning web application that predicts whether a sneaker is likely to receive a high rating based on its brand, price, discount, and number of ratings.
 
-The prediction is based on features like:
-- Brand
-- Price
-- Discount
-- Number of Ratings
+## ✨ Features
 
-## Tech Stack Used
+- Predicts whether a sneaker is likely to be highly rated
+- Uses product features for prediction
+- Includes a Flask-based web interface
+- Applies machine learning for classification
+
+## 🛠️ Technologies Used
+
 - Python
 - Pandas
 - Scikit-learn
 - Flask
-- HTML/CSS
+- HTML and CSS
 
 ## Project Workflow
 1. Data Cleaning and Preprocessing
